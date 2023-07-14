@@ -27,8 +27,8 @@ class ScannerRepositoryImpl @Inject constructor(
         }
     }
 
-    private fun getDetails(barcode: Barcode?): String {
-        return when(barcode?.valueType) {
+    private fun getDetails(barcode: Barcode): String {
+        return when(barcode.valueType) {
             Barcode.TYPE_WIFI -> {
                 val ssid = barcode.wifi!!.ssid
                 val password = barcode.wifi!!.password
